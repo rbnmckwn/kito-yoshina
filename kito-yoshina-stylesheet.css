@@ -240,6 +240,8 @@ swiper-slide img {
 
 @media screen and (max-width: 500px) {
     .main-container {
+        height: 85vh;
+        width: 85vw;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, 1fr);
@@ -247,31 +249,28 @@ swiper-slide img {
         grid-template-areas:
         "information-grid"
         "product-area"
-        "foot-one" 
-        "foot-two"
-        "foot-three"
-        "foot-four";
+        ;
+    }
+    .foot-one{
+        display: none;
+    }
+
+    .foot-two {
+        display: none;
     }
 
     .foot-three {
-        grid-area: foot-three;
-        align-self: end;
-        justify-self: start;
-        text-align: left;
+        display: none;
     }
     
     .foot-four {
-        grid-area: foot-four;
-        align-self: end;
-        justify-self: start;
-        text-align: left;
+       display: none;
     }
 
     .information-section {
         height: 100%;
         width: 100%;
         overflow: visible;
-
     }
 
     swiper-container {
