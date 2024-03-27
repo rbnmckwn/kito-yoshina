@@ -245,8 +245,8 @@ swiper-slide img {
         grid-template-rows: repeat(2, 1fr);
         grid-auto-flow: column;
         grid-template-areas:
-        "product-area"
         "information-grid"
+        "product-area"
         "foot-one" 
         "foot-two"
         "foot-three"
