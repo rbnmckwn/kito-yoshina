@@ -1,0 +1,289 @@
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*keyframes*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeColor {
+    0% {
+        color: #727272;
+    }
+    100% {
+        color:black;
+    }
+}
+
+body {
+    background-color: #9DA19A;
+    color: #727272;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    animation: fadeIn 1s ease-in-out;  
+}
+
+a {
+    color: #727272;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+    animation: fadeColor 1s ease-in forwards;
+}
+
+/*body grid*/
+.main-container {
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 95vh;
+    width: 95vw;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "information-grid information-grid information-grid . product-area product-area product-area product-area"
+        "information-grid information-grid information-grid . product-area product-area product-area product-area"
+        "information-grid information-grid information-grid . product-area product-area product-area product-area"
+        ". . . . . . . ."
+        "foot-one foot-one foot-two foot-two foot-three foot-three foot-four foot-four";
+}
+
+.information-grid {
+    grid-area: information-grid;
+    overflow: scroll;
+}
+
+.product-area {
+    grid-area: product-area;
+    overflow: hidden;
+}
+
+.foot-one {
+    grid-area: foot-one;
+    align-self: end;
+}
+
+.foot-two {
+    grid-area: foot-two;
+    align-self: end;
+}
+
+.foot-three {
+    grid-area: foot-three;
+    align-self: end;
+    justify-self: end;
+    text-align: right;
+}
+
+.foot-four {
+    grid-area: foot-four;
+    align-self: end;
+    justify-self: end;
+    text-align: right;
+}
+
+/*information grid*/
+.information-section {
+    display: grid;
+    height: 100%;
+    width: 60%;
+    grid-template-columns: repeat(3, 1fr) repeat(2, 1.5fr 0.5fr);
+    grid-template-rows: repeat(14, 1fr);
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "kito-yoshina kito-yoshina kito-yoshina kito-yoshina . . ."
+        "date-one date-one . . code-one . ."
+        "description-one description-one description-one description-one . . season-one"
+        "bracket-one . . . bracket-bumber-one . ."
+        "date-two date-two . . code-two . ."
+        "description-two description-two description-two description-two . . season-two"
+        "bracket-two . . . bracket-number-two . ."
+        "date-three date-three . . code-three . ."
+        "description-three description-three description-three description-three . . season-three"
+        "bracket-three . . . bracket-number-three . ."
+        ". . . . . . ."
+        "description-four . description-five description-five description-five description-five description-five"
+        ". . . . bracket-bumber-four . ."
+        ". . . . bracket-number-five . .";
+}
+
+.kito-yoshina {
+    grid-area: kito-yoshina;
+}
+
+.date-one {
+    grid-area: date-one;
+}
+
+.code-one {
+    grid-area: code-one;
+}
+
+.description-one {
+    grid-area: description-one;
+}
+
+.season-one {
+    grid-area: season-one;
+}
+
+.bracket-one {
+    grid-area: bracket-one;
+}
+
+.bracket-number-one {
+    grid-area: bracket-bumber-one;
+}
+
+.date-two {
+    grid-area: date-two;
+}
+
+.code-two {
+    grid-area: code-two;
+}
+
+.description-two {
+    grid-area: description-two;
+}
+
+.season-two {
+    grid-area: season-two;
+}
+
+.bracket-two {
+    grid-area: bracket-two;
+}
+
+.bracket-number-two {
+    grid-area: bracket-number-two;
+}
+
+.date-three {
+    grid-area: date-three;
+}
+
+.code-three {
+    grid-area: code-three;
+}
+
+.description-three {
+    grid-area: description-three;
+}
+
+.season-three {
+    grid-area: season-three;
+}
+
+.bracket-three {
+    grid-area: bracket-three;
+}
+
+.bracket-number-three {
+    grid-area: bracket-number-three;
+}
+
+.description-four {
+    grid-area: description-four;
+    border-top: 1px solid #727272;
+}
+
+.description-five {
+    grid-area: description-five;
+    border-top: 1px solid #727272;
+}
+
+.bracket-number-four {
+    grid-area: bracket-bumber-four;
+}
+
+.bracket-number-five {
+    grid-area: bracket-number-five;
+}
+
+/*swiper*/
+/*swiper-container {
+}*/
+
+swiper-slide {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+swiper-slide:hover {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="20"><text y="50%" font-family="Arial" font-size="12" fill="Gray">Scroll</text></svg>'), auto;
+}
+
+swiper-slide img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 500px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-auto-flow: column;
+        grid-template-areas:
+        "product-area"
+        "information-grid"
+        "foot-one" 
+        "foot-two"
+        "foot-three"
+        "foot-four";
+    }
+
+    .foot-three {
+        grid-area: foot-three;
+        align-self: end;
+        justify-self: start;
+        text-align: left;
+    }
+    
+    .foot-four {
+        grid-area: foot-four;
+        align-self: end;
+        justify-self: start;
+        text-align: left;
+    }
+
+    .information-section {
+        height: 100%;
+        width: 100%;
+        overflow: visible;
+
+    }
+
+    swiper-container {
+        height: 50vh;
+        width: 50vw;
+        
+   
+    }
+
+    swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
